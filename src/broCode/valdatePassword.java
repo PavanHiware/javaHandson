@@ -16,16 +16,26 @@ public class valdatePassword {
 	static boolean passordValidation(String password) {
 		boolean verificationResult = true;
 		if(password.length()>8) {
-			for(int i=0; i<password.length();i++) {
-				char c = password.charAt(i);
-				if(Character.isUpperCase(c)) {
-					break;
-				}
-				
+			if(verificationResult= password.equals(password.toLowerCase()) ) {
+				System.out.println("Please enter atleast one upper letter.");
+			}else if(verificationResult = password.equals(password.toUpperCase())) {
+				System.out.println("Please enter atleast one lowwer letter");
 			}
+				
+			}	
+		else {
 			verificationResult = false;
+			System.out.println("Please enter more that 8 letters.");
 		}
-		
 		return verificationResult;
+	}
+	
+	public static void main(String[] args) {
+		String inputPassword= userInputPassword();
+		if(passordValidation(inputPassword)) {
+			System.out.println("Password is valid.");
+		}else {
+			System.out.println("Password is invalid.");
+		}
 	}
 }
