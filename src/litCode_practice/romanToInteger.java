@@ -16,34 +16,42 @@ public class romanToInteger {
 //convert the roman value to integer
 	static int convertRomanTonum(String romanString) {
 		int result = 0;
-		int preValue=0;
-		int currentValue=0;
-		
-		for (int i = romanString.length() -1 ; i >=0 ; i--) {
-			char c = romanString.charAt(i);
-			
+		int preValue = 0;
+		int currentValue = 0;
 
+		for (int i = romanString.length() - 1; i >= 0; i--) {
+			char c = romanString.charAt(i);
 			switch (c) {
 			case 'I':
-
-				currentValue =1;
+				currentValue = 1;
 				break;
-
 			case 'V':
-				currentValue =  5;
+				currentValue = 5;
 				break;
 			case 'X':
 				currentValue = 10;
 				break;
+			case 'L':
+				currentValue = 50;
+				break;
+			case 'C':
+				currentValue = 100;
+				break;
+			case 'D':
+				currentValue = 500;
+				break;
+			case 'M':
+				currentValue = 1000;
+				break;
 
 			}
-			if(currentValue<preValue) {
+			if (currentValue < preValue) {
 				result -= currentValue;
-			}else {
+			} else {
 				result += currentValue;
-				
+
 			}
-			preValue =currentValue;	
+			preValue = currentValue;
 
 		}
 
