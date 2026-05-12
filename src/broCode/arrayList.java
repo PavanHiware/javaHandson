@@ -13,10 +13,8 @@ public class arrayList {
 			firstNo = num[i];
 			for (int j = 0; j < num.length; j++) {
 				secondNo = num[j];
-				if(i == j) {
-					continue;
-				}
-				else if(firstNo + secondNo == target) {
+				
+				 if(firstNo + secondNo == target) {
 					requiredArray[0] = i;
 					requiredArray[1] = j;
 				}
